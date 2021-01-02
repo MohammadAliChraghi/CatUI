@@ -1,0 +1,27 @@
+@import "../_variables.less";
+nav.menu {
+  display: flex;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: @dark;
+  & > * {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 21pt;
+    outline: none;
+    line-height: 20px;
+    padding: 10px;
+    &:hover {
+      background-color: @gray;
+      transition: 0.3s;
+    }
+  }
+}
