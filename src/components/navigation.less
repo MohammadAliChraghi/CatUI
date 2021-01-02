@@ -1,5 +1,6 @@
 @import "../_variables.less";
-nav.menu {
+nav,
+.nav {
   display: flex;
   padding: 0;
   height: auto;
@@ -12,20 +13,28 @@ nav.menu {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: @dark;
+  background-color: white;
+  box-shadow: 0 2px 5px 0 @gray;
   & > li {
-    background-color: transparent;
+    background: none;
     font-weight: 600;
     font-size: 12pt;
-    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    color: white;
+    color: @dark;
     padding: 15px;
     outline: none;
-    line-height: 20px;
-    &:hover {
-      color: @dark-gray;
-      transition: 0.3s;
+    & a {
+      text-decoration: none;
+      color: @dark;
+      &:visited {
+        color: initial;
+      }
     }
   }
+}
+li {
+  list-style: none;
 }

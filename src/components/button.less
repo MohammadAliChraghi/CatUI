@@ -2,7 +2,6 @@
 button,
 .btn,
 .button {
-  transition-duration: 0.3s;
   position: relative;
   display: inline-block;
   padding: 7px 16px 5px 16px;
@@ -25,19 +24,15 @@ button,
   box-shadow: 0 1px 0 darken(@gray, 10%);
   line-height: 20px;
   color: @dark;
-  &:focus-visible {
+  &:focus {
     box-shadow: 0 0 0 3px @gray-pale;
     outline: none;
   }
   &:hover {
-    background-color: @gray;
-    transition-duration: 0.3s;
-  }
-  &:hover {
-    background-color: darken(@gray, 5%);
+    background-color: lighten(@gray,3%);
   }
   &:active {
-    background-color: darken(@gray, 10%);
+    background-color: darken(@gray, 5%);
   }
 }
 
@@ -50,7 +45,7 @@ button.primary,
   color: white;
   background-color: @blue;
   border-color: @blue-border;
-  &:focus-visible {
+  &:focus {
     box-shadow: 0 0 0 3px @blue-border;
   }
   &:hover {
@@ -67,7 +62,7 @@ button.green,
   color: white;
   background-color: @green;
   border-color: @green-border;
-  &:focus-visible {
+  &:focus {
     box-shadow: 0 0 0 3px @green-border;
   }
   &:hover {
@@ -84,7 +79,7 @@ button.yellow,
   color: black;
   background-color: @yellow;
   border-color: @yellow-border;
-  &:focus-visible {
+  &:focus {
     box-shadow: 0 0 0 2pt @yellow-border;
   }
   &:hover {
@@ -101,7 +96,7 @@ button.red,
   color: white;
   background-color: @red;
   border-color: @red-border;
-  &:focus-visible {
+  &:focus {
     box-shadow: 0 0 0 2pt @red-border;
   }
   &:hover {
