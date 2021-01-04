@@ -81,13 +81,13 @@
       <input id="s2" type="checkbox" class="switch" disabled checked />
       <label for="s2">Switch</label>
     </li>
-    <div class="opensidenav">Open</div>
-    <div class="sidenav">
-      <a href="javascript:void(0)" class="dec" onclick="closeNav()">&times;</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+    <button class="blue" data-open-sidenav="leftsn">Open Left Sidenav</button>
+    <button class="blue" data-open-sidenav="rightsn">Open Right Sidenav</button>
+    <div id="rightsn" class="sidenav right">
+      <li>Right Sidenav</li>
+    </div>
+    <div id="leftsn" class="sidenav">
+      <li>Left Sidenav</li>
     </div>
     <script src="./script.js"></script>
   </body>

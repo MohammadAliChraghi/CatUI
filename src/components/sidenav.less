@@ -1,20 +1,22 @@
 @import "../icons/fontawesome";
 @import "../icons/solid";
+@import "../_variables.less";
 @import "../theme/animations.less";
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 400px;
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 0;
-  background-color: #111;
+  left: -400px;
+  background-color: #fff;
+  border-right: 1px solid @gray;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
 }
 
-.sidenav a {
+.sidenav li a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -25,14 +27,6 @@
 
 .sidenav a:hover {
   color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
 }
 
 @media screen and (max-height: 450px) {
