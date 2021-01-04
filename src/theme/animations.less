@@ -4,3 +4,17 @@
     transition-duration: 0.3s;
   }
 }
+
+@keyframes alertTimeOut {
+  0%{
+    background-size: 100% 5px;
+  }
+  90% {
+    background-size: 0 5px;
+    right: 5px;
+  }
+  100%{
+    right: -100vw;
+    background-size: 0 5px;
+  }
+}

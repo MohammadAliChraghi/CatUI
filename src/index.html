@@ -6,6 +6,7 @@
     <title>Cat UI</title>
     <link rel="stylesheet/less" type="text/css" href="./index.less" />
     <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
+    <script src="./jquery.js"></script>
   </head>
   <body>
     <!-- Test Navigation -->
@@ -80,5 +81,14 @@
       <input id="s2" type="checkbox" class="switch" disabled checked />
       <label for="s2">Switch</label>
     </li>
+    <div class="opensidenav">Open</div>
+    <div class="sidenav">
+      <a href="javascript:void(0)" class="dec" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+    <script src="./script.js"></script>
   </body>
 </html>
