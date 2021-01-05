@@ -6,7 +6,7 @@ $("[data-open]").on("click", function () {
 });
 
 $(window).on("click", function () {
-  $(".sidenav").each(function () {
+  $(".sidenav, sidenav").each(function () {
     var str = $(this).css("transform");
     var x = str.split(",");
     var len = x.length;
@@ -27,6 +27,6 @@ $(window).on("click", function () {
   });
 });
 
-$(".sidenav").on("click", function (event) {
+$(".sidenav, sidenav, .nav, nav").on("click", function (event) {
   event.stopPropagation();
 });
