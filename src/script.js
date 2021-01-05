@@ -1,21 +1,32 @@
-$("[data-open-sidenav]").on("click", function() {
-  if ($(this).data("open-sidenav").length && $(`#${$(this).data("open-sidenav")}`).length) {
-    $(`#${$(this).data("open-sidenav")}`).animate({
-      left: "0"
-    }, 300);
+$("[data-open]").on("click", function () {
+  var e = $(this).data("open");
+  if (e.length && $(`#${e}`).length) {
+    $(`#${e}`).addClass("open");
   }
 });
 
-$(window).on("click", function() {
-  $('.sidenav').each(function() {
-    if (parseInt($(this).css("left")) === 0) {
-      $(this).animate({
-        left: "-400px"
-      }, 300, "linear");
+$(window).on("click", function () {
+  $(".sidenav").each(function () {
+    var str = $(this).css("transform");
+    var x = str.split(",");
+    var len = x.length;
+    if (parseInt(x[len - 2]) >= 0) {
+      $(this).removeClass("open");
+    }
+  });
+
+  $(".nav, nav").each(function () {
+    if (window.matchMedia("(max-width: 900px)").matches) {
+      var str = $(this).css("transform");
+      var x = str.split(",");
+      var len = x.length;
+      if (parseInt(x[len - 2]) >= 0) {
+        $(this).removeClass("open");
+      }
     }
   });
 });
 
-$(".sidenav").on("click", function(event) {
+$(".sidenav").on("click", function (event) {
   event.stopPropagation();
 });

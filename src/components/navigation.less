@@ -1,3 +1,5 @@
+@import "../icons/fontawesome";
+@import "../icons/solid";
 @import "../_variables.less";
 nav,
 .nav {
@@ -5,7 +7,7 @@ nav,
   padding: 0;
   height: auto;
   margin: 0 auto;
-  width: 100%;
+  flex-wrap: wrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -26,15 +28,41 @@ nav,
     color: @dark;
     padding: 15px;
     outline: none;
-    & a {
-      text-decoration: none;
-      color: @dark;
-      &:visited {
-        color: initial;
-      }
-    }
   }
 }
 li {
   list-style: none;
+}
+
+@media screen and (max-width: @sm_screen) {
+  .nav,
+  nav {
+    height: 100vh;
+    width: 240px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transform: translateX(-240px);
+    background-color: #fff;
+    border-right: 1px solid @gray;
+    display: block;
+    overflow-x: hidden;
+    overflow: auto;
+    transition: 0.5s;
+    text-align: justify;
+    &.open{
+      transform: translateX(0);
+    }
+    & > li {
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 14pt;
+      border-bottom: 1px solid @gray;
+      transition: 0.3s;
+    }
+    & > li > a {
+      display: block;
+    }
+  }
 }

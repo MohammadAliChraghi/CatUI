@@ -10,16 +10,16 @@
   </head>
   <body>
     <!-- Test Navigation -->
-    <nav>
-      <li><a>Pull requests</a></li>
-      <li><a href="https://instagram.com">Instagram</a></li>
-      <li><a href="https://zoomit.ir">Zoomit</a></li>
-      <li><a>Explore</a></li>
+    <nav id="navbar">
       <li>
         <!-- Test Input -->
         <input type="text" placeholder="type..." />
         <!-- Test Input -->
       </li>
+      <li><a>Pull requests</a></li>
+      <li><a href="https://instagram.com">Instagram</a></li>
+      <li><a href="https://zoomit.ir">Zoomit</a></li>
+      <li><a>Explore</a></li>
     </nav>
     <!-- Test Navigation -->
     <!-- Test Fonts -->
@@ -81,13 +81,11 @@
       <input id="s2" type="checkbox" class="switch" disabled checked />
       <label for="s2">Switch</label>
     </li>
-    <button class="blue" data-open-sidenav="leftsn">Open Left Sidenav</button>
-    <button class="blue" data-open-sidenav="rightsn">Open Right Sidenav</button>
-    <div id="rightsn" class="sidenav right">
-      <li>Right Sidenav</li>
-    </div>
-    <div id="leftsn" class="sidenav">
-      <li>Left Sidenav</li>
+    <button class="blue" data-open="sidenav">Open Sidenav</button>
+    <button class="blue" data-open="navbar">Open Navbar</button>
+    <div id="sidenav" class="sidenav">
+      <li>Pure LI</li>
+      <li><a href="#">With</a></li>
     </div>
     <script src="./script.js"></script>
   </body>

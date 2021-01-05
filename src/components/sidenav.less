@@ -1,39 +1,31 @@
 @import "../icons/fontawesome";
 @import "../icons/solid";
 @import "../_variables.less";
-@import "../theme/animations.less";
+
 .sidenav {
-  height: 100%;
-  width: 400px;
+  height: 100vh;
+  width: 320px;
   position: fixed;
   z-index: 1;
   top: 0;
-  left: -400px;
+  left: 0;
+  transform: translateX(-320px);
   background-color: #fff;
   border-right: 1px solid @gray;
   overflow-x: hidden;
+  overflow: auto;
   transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav li a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
+  & > li {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 14pt;
+    border-bottom: 1px solid @gray;
+    transition: 0.3s;
   }
-  .sidenav a {
-    font-size: 18px;
+  & > li > a {
+    display: block;
+  }
+  &.open {
+    transform: translateX(0);
   }
 }
