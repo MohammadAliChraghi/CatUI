@@ -1,0 +1,51 @@
+@import "../_variables.less";
+@import "../theme/animations.less";
+dialog,
+.dialog {
+  display: none;
+  flex-wrap: wrap;
+  margin: auto;
+  left: 0;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 0 0 110vh rgba(0, 0, 0, 0.4);
+  border-radius: 6px 6px 0 0;
+  min-width: 320px;
+  max-width: 780px;
+  z-index: 6;
+  padding: 10px;
+  height: auto;
+  width: auto;
+  background-color: white;
+  border: 1px solid #f0f0f0;
+  & > h1,
+  > h2,
+  > h3,
+  > h4 {
+    padding: 0 5px 5px 5px;
+    border-bottom: 1px solid @gray-pale;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+  & text,
+  .text,
+  > p {
+    text-align: justify;
+    border-bottom: 1px solid @gray-pale;
+    width: 100%;
+    margin: 10px 0;
+    padding-bottom: 10px;
+  }
+  & button,
+  .button {
+    flex: 1;
+    margin: 5px;
+  }
+  &.open {
+    display: flex;
+  }
+  &.close {
+    animation: CloseDialog 0.5s;
+  }
+}

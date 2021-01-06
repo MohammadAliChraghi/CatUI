@@ -12,10 +12,22 @@ body {
   word-wrap: break-word;
 }
 
-a{
+a {
   text-decoration: none;
   color: @dark;
   &:visited {
     color: initial;
   }
+}
+
+parent,
+.parent {
+  display: block;
+  width: 100%;
+}
+parent-flex,
+.parent-flex {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
