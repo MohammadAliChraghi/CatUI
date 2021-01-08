@@ -4,7 +4,7 @@ button,
 .button {
   position: relative;
   display: inline-block;
-  padding: 7px 16px 5px 16px;
+  padding: 6px 16px;
   font-size: 16px;
   font-weight: 500;
   white-space: nowrap;
@@ -14,25 +14,23 @@ button,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid @gray-pale;
+  border: none;
   border-radius: 6px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: white;
+  background-color: @gray;
   outline: none;
-  box-shadow: 0 1px 0 darken(@gray, 10%);
-  line-height: 20px;
-  color: @dark;
-  &:focus {
-    box-shadow: 0 0 0 3px @gray-pale;
+  color: @blue;
+  &:focus-visible {
     outline: none;
+    box-shadow: 0 0 0 2px @blue;
   }
   &:hover {
-    background-color: lighten(@gray,3%);
+    background-color: darken(@gray, 3%);
   }
   &:active {
-    background-color: darken(@gray, 4%);
+    background-color: darken(@gray, 5%);
   }
 }
 
@@ -44,15 +42,14 @@ button.primary,
 .button.primary {
   color: white;
   background-color: @blue;
-  border-color: @blue-border;
-  &:focus {
-    box-shadow: 0 0 0 3px @blue-border;
+  &:focus-visible {
+    box-shadow: 0 0 0 2px @blue-border;
   }
   &:hover {
-    background-color: darken(@blue, 5%);
+    background-color: darken(@blue, 2%);
   }
   &:active {
-    background-color: darken(@blue, 10%);
+    background-color: darken(@blue, 5%);
   }
 }
 
@@ -61,15 +58,14 @@ button.green,
 .button.green {
   color: white;
   background-color: @green;
-  border-color: @green-border;
-  &:focus {
+  &:focus-visible {
     box-shadow: 0 0 0 3px @green-border;
   }
   &:hover {
-    background-color: darken(@green, 5%);
+    background-color: darken(@green, 2%);
   }
   &:active {
-    background-color: darken(@green, 10%);
+    background-color: darken(@green, 5%);
   }
 }
 
@@ -78,15 +74,14 @@ button.yellow,
 .button.yellow {
   color: black;
   background-color: @yellow;
-  border-color: @yellow-border;
-  &:focus {
+  &:focus-visible {
     box-shadow: 0 0 0 2pt @yellow-border;
   }
   &:hover {
-    background-color: darken(@yellow, 5%);
+    background-color: darken(@yellow, 2%);
   }
   &:active {
-    background-color: darken(@yellow, 10%);
+    background-color: darken(@yellow, 5%);
   }
 }
 
@@ -95,14 +90,13 @@ button.red,
 .button.red {
   color: white;
   background-color: @red;
-  border-color: @red-border;
-  &:focus {
+  &:focus-visible {
     box-shadow: 0 0 0 2pt @red-border;
   }
   &:hover {
-    background-color: darken(@red, 5%);
+    background-color: darken(@red, 2%);
   }
   &:active {
-    background-color: darken(@red, 10%);
+    background-color: darken(@red, 5%);
   }
 }

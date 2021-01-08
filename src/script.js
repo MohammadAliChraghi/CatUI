@@ -1,7 +1,30 @@
+const Errors = {
+  Code_1: "CatUI Error Code 1 : Target Element Not Found!",
+  Code_2:
+    "CatUI Error Code 2 : Some value is not given to the ( <value> or <div class='value'> ) element !",
+};
+
+$(document).ready(function () {
+  $(".progress-bar > value, progress-bar > value").each(function () {
+    var p = $(this).data("percent");
+    if (typeof p !== undefined && typeof p !== "undefined") {
+      $(this).css("width", `${p}%`);
+    } else {
+      console.warn(Errors.Code_2);
+    }
+  });
+});
+
 $("[data-open]").on("click", function () {
   var e = $(this).data("open");
-  if (e.length && $(`#${e}`).length) {
-    $(`#${e}`).addClass("open");
+  if (e.length) {
+    if ($(`#${e}`).length) {
+      $(`#${e}`).addClass("open");
+    } else {
+      console.error(Errors.Code_1);
+    }
+  } else {
+    $(this).parent().addClass("open");
   }
 });
 
@@ -9,37 +32,12 @@ $("[data-close]").on("click", function () {
   var e = $(this).data("close");
   if (e.length) {
     if ($(`#${e}`).length) {
-      var specialEls = ["dialog"];
-      var ElType;
-      function isSpecial() {
-        for (i in specialEls) {
-          if (
-            $(`#${e}`).hasClass(specialEls[i]) ||
-            $(`#${e}`).prop("tagName").toLowerCase() === specialEls[i]
-          ) {
-            ElType = specialEls[i];
-            return true;
-          } else {
-            return false;
-          }
-          break;
-        }
-      }
-      // Specials
-      if (isSpecial()) {
-        if (ElType === "dialog") {
-          $(`#${e}`)
-            .css("box-shadow", "0 0 0 0 rgba(0,0,0,0.4)")
-            .animate({ bottom: "-120vh" });
-        }
-      }
-      // Specials
-    }
-    else{
-      console.error("CatUI Error Code 1 : Target Element Not Found!");
+      $(`#${e}`).removeClass("open");
+    } else {
+      console.error(Errors.Code_1);
     }
   } else {
-    $(this).parent().addClass("d-none");
+    $(this).parent().removeClass("open");
   }
 });
 
@@ -68,3 +66,30 @@ $(window).on("click", function () {
 $(".sidenav, sidenav, .nav, nav").on("click", function (event) {
   event.stopPropagation();
 });
+
+window.MutationObserver =
+  window.MutationObserver ||
+  window.WebKitMutationObserver ||
+  window.MozMutationObserver;
+var target = document.querySelectorAll(
+    ".progress-bar > value, progress-bar > value"
+  ),
+  observer = new MutationObserver(function (mutation) {
+    var m = mutation[0].target;
+    var p = m.attributes["data-percent"].value;
+    m.style.width = `${p}%`;
+  }),
+  config = {
+    attributes: true,
+    attributeFilter: ["data-percent"],
+  };
+
+for (i of target) {
+  observer.observe(i, config);
+}
+
+var i = 5;
+setInterval(function () {
+  $("progress-bar > value").attr("data-percent", i);
+  i = i + 5;
+}, 1000);

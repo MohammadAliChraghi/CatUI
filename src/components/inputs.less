@@ -32,7 +32,7 @@ input[type="text"] {
         opacity var(--d-o, 0.2s);
     }
     &:checked {
-      background-color: @blue;
+      background-color: white;
     }
     &:disabled {
       background-color: @dark-gray;
@@ -52,7 +52,7 @@ input[type="text"] {
         }
       }
     }
-    &:focus {
+    &:focus-visible {
       box-shadow: 0 0 0 2px rgba(39, 94, 254, 0.3);
     }
     &:not(.switch) {
@@ -79,7 +79,7 @@ input[type="text"] {
       &:after {
         width: 5px;
         height: 9px;
-        border: 2px solid #fff;
+        border: 2px solid @blue;
         border-top: 0;
         border-left: 0;
         left: 6px;
@@ -103,7 +103,7 @@ input[type="text"] {
         transform: translateX(var(--x, 0));
       }
       &:checked {
-        --ab: #fff;
+        --ab: @blue;
         --x: 17px;
       }
       &:disabled {
@@ -121,12 +121,13 @@ input[type="text"] {
       width: 19px;
       height: 19px;
       border-radius: 50%;
-      background: #fff;
+      background: @blue;
       opacity: 0;
       transform: scale(var(--s, 0.7));
     }
     &:checked {
       --s: 0.5;
+      background-color: #fff;
     }
   }
 }
