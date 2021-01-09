@@ -5,8 +5,8 @@ button,
   position: relative;
   display: inline-block;
   padding: 6px 16px;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 16pt;
+  font-weight: 400;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -15,16 +15,16 @@ button,
   -ms-user-select: none;
   user-select: none;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background-color: @gray;
   outline: none;
-  color: @blue;
+  color: @dark;
   &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px @blue;
+    box-shadow: 0 0 0 2px lighten(@dark,80%);
   }
   &:hover {
     background-color: darken(@gray, 3%);

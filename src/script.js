@@ -41,6 +41,14 @@ $("[data-close]").on("click", function () {
   }
 });
 
+$("nav.vtc > li.clp, .nav.vtc > li.clp").on("click", function () {
+  if (!$(this).children().hasClass("open")) {
+    $(this).children().addClass("open");
+  } else {
+    $(this).children().removeClass("open");
+  }
+});
+
 $(window).on("click", function () {
   $(".sidenav, sidenav").each(function () {
     var str = $(this).css("transform");

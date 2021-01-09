@@ -9,98 +9,117 @@
     <script src="./jquery.js"></script>
   </head>
   <body>
-    <!-- Test Navigation -->
-    <nav id="navbar">
+    <pad>
+      <!-- Test Navigation -->
+      <nav id="navbar">
+        <li>
+          <!-- Test Input -->
+          <input type="text" placeholder="type..." />
+          <!-- Test Input -->
+        </li>
+        <li><a>Pull requests</a></li>
+        <li><a href="https://instagram.com">Instagram</a></li>
+        <li><a href="https://zoomit.ir">Zoomit</a></li>
+        <li><a>Explore</a></li>
+      </nav>
+      <!-- Test Navigation -->
+
+      <!-- Test Fonts -->
+      <h1>Heading H1</h1>
+      <h2>Heading H2</h2>
+      <h3>Heading H3</h3>
+      <h4>Heading H4</h4>
+      <h5>Heading H5</h5>
+      <h6>Heading H6</h6>
+      <hr />
+      <h1>هدینگ H1</h1>
+      <h2>هدینگ H2</h2>
+      <h3>هدینگ H3</h3>
+      <h4>هدینگ H4</h4>
+      <h5>هدینگ H5</h5>
+      <h6>هدینگ H6</h6>
+      <!-- Test Fonts -->
+      <divider></divider>
+      <!-- Test Grids -->
+      <div class="row">
+        <div class="col-4">A</div>
+        <div class="col-4">B</div>
+        <div class="col-4">C</div>
+      </div>
+      <!-- Test Grids -->
+      <!-- Test Button -->
+      <button>Primary</button>
+      <button class="blue">Primary</button>
+      <button class="green">Succefuly</button>
+      <button class="yellow">Warning</button>
+      <button class="red">Danger</button>
+      <!-- Test Button -->
+
+      <nav class="vtc" id="vtc_nav">
+        <li class="clp">
+          Open Collapse
+          <ul>
+            <li>Hi</li>
+            <li>Mac</li>
+          </ul>
+        </li>
+        <li>example</li>
+        <li>example 2</li>
+      </nav>
+
       <li>
-        <!-- Test Input -->
-        <input type="text" placeholder="type..." />
-        <!-- Test Input -->
+        <input id="c1" type="checkbox" />
+        <label for="c1">Checkbox</label>
       </li>
-      <li><a>Pull requests</a></li>
-      <li><a href="https://instagram.com">Instagram</a></li>
-      <li><a href="https://zoomit.ir">Zoomit</a></li>
-      <li><a>Explore</a></li>
-    </nav>
-    <!-- Test Navigation -->
-    <!-- Test Fonts -->
-    <h1>Heading H1</h1>
-    <h2>Heading H2</h2>
-    <h3>Heading H3</h3>
-    <h4>Heading H4</h4>
-    <h5>Heading H5</h5>
-    <h6>Heading H6</h6>
-    <hr />
-    <h1>هدینگ H1</h1>
-    <h2>هدینگ H2</h2>
-    <h3>هدینگ H3</h3>
-    <h4>هدینگ H4</h4>
-    <h5>هدینگ H5</h5>
-    <h6>هدینگ H6</h6>
-    <!-- Test Fonts -->
-    <hr />
-    <!-- Test Grids -->
-    <div class="row">
-      <div class="col-4">A</div>
-      <div class="col-4">B</div>
-      <div class="col-4">C</div>
-    </div>
-    <!-- Test Grids -->
-    <!-- Test Button -->
-    <button>Primary</button>
-    <button class="blue">Primary</button>
-    <button class="green">Succefuly</button>
-    <button class="yellow">Warning</button>
-    <button class="red">Danger</button>
-    <!-- Test Button -->
 
-    <li>
-      <input id="c1" type="checkbox" />
-      <label for="c1">Checkbox</label>
-    </li>
+      <li>
+        <input id="r1" type="radio" name="radio" value="1" />
+        <label for="r1">Radio</label>
+      </li>
 
-    <li>
-      <input id="r1" type="radio" name="radio" value="1" />
-      <label for="r1">Radio</label>
-    </li>
+      <li>
+        <input id="s2" type="checkbox" class="switch" checked />
+        <label for="s2">Switch</label>
+      </li>
+      <li>
+        <input id="c1" type="checkbox" disabled />
+        <label for="c1">Checkbox</label>
+      </li>
 
-    <li>
-      <input id="s2" type="checkbox" class="switch" checked />
-      <label for="s2">Switch</label>
-    </li>
-    <li>
-      <input id="c1" type="checkbox" disabled />
-      <label for="c1">Checkbox</label>
-    </li>
+      <li>
+        <input id="r1" type="radio" name="radio" disabled value="1" />
+        <label for="r1">Radio</label>
+      </li>
 
-    <li>
-      <input id="r1" type="radio" name="radio" disabled value="1" />
-      <label for="r1">Radio</label>
-    </li>
-
-    <li>
-      <input id="s2" type="checkbox" class="switch" disabled checked />
-      <label for="s2">Switch</label>
-    </li>
-    <button class="blue" data-open="sidenav">Open Sidenav</button>
-    <button class="blue" data-open="navbar">Open Navbar</button>
-    <button class="blue" data-open="dialog">Open Dialog</button>
-    <div id="sidenav" class="sidenav">
-      <li>Pure LI</li>
-      <li><a href="#">With</a></li>
-    </div>
-    <dialog id="dialog">
-      <h4>Hi, Im A Dialog</h4>
-      <text>Hi, Im Mac Geek</text>
-      <parent-flex>
-        <button data-close="dialog" class="blue">Ok</button
-        ><button data-close="dialog" class="red">Problem</button
-        ><button data-close="dialog">Close</button>
-      </parent-flex>
-    </dialog>
-    <progress-bar><value data-percent="5"></value></progress-bar>
-    <progress-bar class="red"><value data-percent="74"></value></progress-bar>
-    <progress-bar class="yellow"><value data-percent="20"></value></progress-bar>
-    <progress-bar class="green"><value data-percent="45"></value></progress-bar>
+      <li>
+        <input id="s2" type="checkbox" class="switch" disabled checked />
+        <label for="s2">Switch</label>
+      </li>
+      <button class="blue" data-open="sidenav">Open Sidenav</button>
+      <button class="blue" data-open="navbar">Open Navbar</button>
+      <button class="blue" data-open="dialog">Open Dialog</button>
+      <div id="sidenav" class="sidenav">
+        <li>Pure LI</li>
+        <li><a href="#">With</a></li>
+      </div>
+      <dialog id="dialog">
+        <h4>Hi, Im A Dialog</h4>
+        <text>Hi, Im Mac Geek</text>
+        <parent-flex>
+          <button data-close="dialog" class="blue">Ok</button
+          ><button data-close="dialog" class="red">Problem</button
+          ><button data-close="dialog">Close</button>
+        </parent-flex>
+      </dialog>
+      <progress-bar><value data-percent="5"></value></progress-bar>
+      <progress-bar class="red"><value data-percent="74"></value></progress-bar>
+      <progress-bar class="yellow"
+        ><value data-percent="20"></value
+      ></progress-bar>
+      <progress-bar class="green"
+        ><value data-percent="45"></value
+      ></progress-bar>
+    </pad>
     <script src="./script.js"></script>
   </body>
 </html>

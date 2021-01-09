@@ -19,8 +19,7 @@ input[type="text"] {
     position: relative;
     margin: 0;
     cursor: pointer;
-    border: 1px solid @dark-gray;
-    background: #fff;
+    background-color: @gray;
     transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
     &:after {
       content: "";
@@ -30,9 +29,6 @@ input[type="text"] {
       position: absolute;
       transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
         opacity var(--d-o, 0.2s);
-    }
-    &:checked {
-      background-color: white;
     }
     &:disabled {
       background-color: @dark-gray;
@@ -82,7 +78,7 @@ input[type="text"] {
         border: 2px solid @blue;
         border-top: 0;
         border-left: 0;
-        left: 6px;
+        left: 7px;
         top: 3px;
         transform: rotate(var(--r, 20deg));
       }
@@ -94,8 +90,8 @@ input[type="text"] {
       width: 38px;
       border-radius: 11px;
       &:after {
-        left: 2px;
-        top: 2px;
+        left: 3px;
+        top: 3px;
         border-radius: 50%;
         width: 15px;
         height: 15px;
@@ -119,6 +115,8 @@ input[type="text"] {
     border-radius: 50%;
     &:after {
       width: 19px;
+      left: 1px;
+      top: 1px;
       height: 19px;
       border-radius: 50%;
       background: @blue;
@@ -127,7 +125,6 @@ input[type="text"] {
     }
     &:checked {
       --s: 0.5;
-      background-color: #fff;
     }
   }
 }
