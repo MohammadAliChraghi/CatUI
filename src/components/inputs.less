@@ -4,8 +4,12 @@ input[type="text"] {
   border: 1px solid @gray-pale;
   border-radius: 6px;
   outline: none;
+  cursor: pointer;
   padding: 5px 12px;
   font-size: 12pt;
+  &:focus{
+    cursor: auto;
+  }
 }
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type="checkbox"],

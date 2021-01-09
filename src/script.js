@@ -4,6 +4,21 @@ const Errors = {
     "CatUI Error Code 2 : Some value is not given to the ( <value> or <div class='value'> ) element !",
 };
 
+function GetLocation(e) {
+  var top = 0,
+    left = 0;
+  do {
+    top += e.offsetTop || 0;
+    left += e.offsetLeft || 0;
+    e = e.offsetParent;
+  } while (e);
+
+  return {
+    top: top,
+    left: left,
+  };
+}
+
 $(document).ready(function () {
   $(".progress-bar > value, progress-bar > value").each(function () {
     var p = $(this).data("percent");
@@ -13,6 +28,21 @@ $(document).ready(function () {
       console.warn(Errors.Code_2);
     }
   });
+});
+
+var t = document.createElement("TOOLTIP");
+const d = document.querySelectorAll("[data-tooltip]");
+document.body.prepend(t);
+d.forEach((i) => {
+  const handleMouseLeave = () => t.classList.remove("open");
+  const handleMouseMove = (e) => {
+    t.innerText = i.getAttribute("data-tooltip");
+    this.t.classList.add("open");
+    this.t.style.top = e.clientY + 15 + "px";
+    this.t.style.left = e.clientX + 15 + "px";
+  };
+  i.addEventListener("mousemove", handleMouseMove);
+  i.addEventListener("mouseleave", handleMouseLeave);
 });
 
 $("[data-open]").on("click", function () {
@@ -41,7 +71,7 @@ $("[data-close]").on("click", function () {
   }
 });
 
-$("nav.vtc > li.clp, .nav.vtc > li.clp").on("click", function () {
+$("list-item > li.clp, .list-item > li.clp").on("click", function () {
   if (!$(this).children().hasClass("open")) {
     $(this).children().addClass("open");
   } else {

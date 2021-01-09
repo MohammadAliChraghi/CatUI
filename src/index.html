@@ -9,6 +9,8 @@
     <script src="./jquery.js"></script>
   </head>
   <body>
+    <tooltip></tooltip>
+    
     <pad>
       <!-- Test Navigation -->
       <nav id="navbar">
@@ -32,7 +34,7 @@
       <h5>Heading H5</h5>
       <h6>Heading H6</h6>
       <hr />
-      <h1>هدینگ H1</h1>
+      <h1 data-tooltip="Hi lol">هدینگ H1</h1>
       <h2>هدینگ H2</h2>
       <h3>هدینگ H3</h3>
       <h4>هدینگ H4</h4>
@@ -48,14 +50,14 @@
       </div>
       <!-- Test Grids -->
       <!-- Test Button -->
-      <button>Primary</button>
-      <button class="blue">Primary</button>
+      <button data-tooltip="Shut">Primary</button>
+      <button data-tooltip="Up" class="blue">Primary</button>
       <button class="green">Succefuly</button>
       <button class="yellow">Warning</button>
       <button class="red">Danger</button>
       <!-- Test Button -->
 
-      <nav class="vtc" id="vtc_nav">
+      <list-item data-tooltip="Hi lol">
         <li class="clp">
           Open Collapse
           <ul>
@@ -65,9 +67,9 @@
         </li>
         <li>example</li>
         <li>example 2</li>
-      </nav>
+      </list-item>
 
-      <li>
+      <li data-tooltip="Hi lol">
         <input id="c1" type="checkbox" />
         <label for="c1">Checkbox</label>
       </li>

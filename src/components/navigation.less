@@ -31,26 +31,6 @@ nav,
     padding: 15px;
     outline: none;
   }
-  &.vtc {
-    display: block;
-    position: relative;
-    & > li {
-      display: block;
-    }
-    overflow-x: hidden;
-    width: auto;
-    overflow: auto;
-    text-align: justify;
-    & .clp > ul {
-      overflow: hidden;
-      max-height: 0;
-      transition-duration: 1500ms;
-      &.open {
-        max-height: 500px;
-        transition-duration: 3s;
-      }
-    }
-  }
 }
 
 li {
@@ -88,5 +68,21 @@ ul {
     & > li > a {
       display: block;
     }
+  }
+}
+
+tooltip {
+  display: none;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  position: fixed;
+  border-radius: 4px;
+  opacity: 0.9;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  &.open {
+    display: block;
   }
 }

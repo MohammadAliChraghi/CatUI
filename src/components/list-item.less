@@ -1,0 +1,30 @@
+list-item,
+.list-item {
+  display: block;
+  position: relative;
+  & > li {
+    background: none;
+    font-weight: 600;
+    font-size: 12pt;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: @dark;
+    padding: 15px;
+    outline: none;
+  }
+  overflow-x: hidden;
+  width: auto;
+  overflow: auto;
+  text-align: justify;
+  & .clp > ul {
+    overflow: hidden;
+    max-height: 0;
+    transition-duration: 1500ms;
+    &.open {
+      max-height: 500px;
+      transition-duration: 3s;
+    }
+  }
+}
