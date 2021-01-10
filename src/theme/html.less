@@ -1,3 +1,4 @@
+@import "../_variables.less";
 * {
   box-sizing: border-box;
   &:focus-visible {
@@ -20,14 +21,12 @@ a {
   }
 }
 
-parent,
-.parent {
-  display: block;
-  width: 100%;
-}
-parent-flex,
-.parent-flex {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+[theme="dark"] {
+  & body {
+    background-color: black;
+    color: @gray;
+  }
+  & a {
+    color: @gray;
+  }
 }

@@ -1,4 +1,3 @@
-@import "../_variables.less";
 divider,
 .divider {
   margin: 10px 0;
@@ -11,4 +10,8 @@ divider,
   margin-inline-start: auto;
   margin-inline-end: auto;
   overflow: hidden;
+}
+[theme="dark"] divider,
+[theme="dark"] .divider {
+  border-color: @dark-light;
 }

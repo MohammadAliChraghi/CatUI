@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat UI</title>
+    <link rel="stylesheet/less" type="text/css" href="./index.less" />
+    <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
+  </head>
+  <body>
+    <pad>
+      <!-- Test Navigation -->
+      <nav id="navbar">
+        <li>
+          <!-- Test Input -->
+          <input type="text" placeholder="type..." />
+          <!-- Test Input -->
+        </li>
+        <li><a>Pull requests</a></li>
+        <li><a href="https://instagram.com">Instagram</a></li>
+        <li><a href="https://zoomit.ir">Zoomit</a></li>
+        <li><a>Explore</a></li>
+      </nav>
+      <!-- Test Navigation -->
+
+      <!-- Test Fonts -->
+      <h1>Heading H1</h1>
+      <h2>Heading H2</h2>
+      <h3>Heading H3</h3>
+      <h4>Heading H4</h4>
+      <h5>Heading H5</h5>
+      <h6>Heading H6</h6>
+      <!-- Test Fonts -->
+
+      <table>
+        <thead>
+          <tr>
+            <th>Table</th>
+            <th>Header</th>
+            <th>HeHe</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Table</td>
+            <td>Body</td>
+            <td>HeHe</td>
+          </tr>
+          <tr>
+            <td>Table</td>
+            <td>Body</td>
+            <td>HeHe</td>
+          </tr>
+          <tr>
+            <td>Table</td>
+            <td>Body</td>
+            <td>HeHe</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <divider></divider>
+
+      <select>
+        <option value="0">Select car Or Car</option>
+        <option value="1">Audi</option>
+        <option value="2">BMW</option>
+        <option value="3">Citroen</option>
+        <option value="4">Ford</option>
+        <option value="5">Honda</option>
+        <option value="6">Jaguar</option>
+        <option value="7">Land Rover</option>
+        <option value="8">Mercedes</option>
+        <option value="9">Mini</option>
+        <option value="10">Nissan</option>
+        <option value="11">Toyota</option>
+        <option value="12">Volvo</option>
+      </select>
+
+      <chip class="outlined" tabindex="0">Chip</chip>
+      <chip tabindex="0">Chip</chip>
+
+      <input
+        type="range"
+        min="1"
+        max="100"
+        value="50"
+        class="slider"
+        id="myRange"
+      />
+
+      <!-- Test Grids -->
+      <div class="row">
+        <div class="col-4">A</div>
+        <div class="col-4">B</div>
+        <div class="col-4">C</div>
+      </div>
+      <!-- Test Grids -->
+      <!-- Test Button -->
+      <button data-tooltip="Shut">Primary</button>
+      <button data-tooltip="Up" class="blue">Primary</button>
+      <button class="green">Succefuly</button>
+      <button class="yellow">Warning</button>
+      <button class="red">Danger</button>
+      <!-- Test Button -->
+
+      <pre>
+fn main() {
+  areas := ['game', 'web', 'tools', 'science', 'systems',
+            'embedded', 'drivers', 'GUI', 'mobile']
+  for area in areas {
+    println('Hello, $area developers!')
+  }
+}</pre
+      >
+      <list-item data-tooltip="Hi lol">
+        <li class="clp">
+          Open Collapse
+          <ul>
+            <li>Hi</li>
+            <li>Mac</li>
+          </ul>
+        </li>
+        <li>example</li>
+        <li>example 2</li>
+      </list-item>
+
+      <li data-tooltip="Hi lol">
+        <input id="c1" type="checkbox" />
+        <label for="c1">Checkbox</label>
+      </li>
+
+      <li>
+        <input id="r1" type="radio" name="radio" value="1" />
+        <label for="r1">Radio</label>
+      </li>
+
+      <li>
+        <input id="s2" type="checkbox" class="switch" checked />
+        <label for="s2">Switch</label>
+      </li>
+      <li>
+        <input id="c1" type="checkbox" disabled />
+        <label for="c1">Checkbox</label>
+      </li>
+
+      <li>
+        <input id="r1" type="radio" name="radio" disabled value="1" />
+        <label for="r1">Radio</label>
+      </li>
+
+      <li>
+        <input id="s2" type="checkbox" class="switch" disabled checked />
+        <label for="s2">Switch</label>
+      </li>
+      <button class="blue" data-open="sidenav">Open Sidenav</button>
+      <button class="blue" data-open="navbar">Open Navbar</button>
+      <button class="blue" data-open="dialog">Open Dialog</button>
+      <div id="sidenav" class="sidenav">
+        <li>Pure LI</li>
+        <li><a href="#">With</a></li>
+      </div>
+      <dialog id="dialog">
+        <h4>Hi, Im A Dialog</h4>
+        <text>Hi, Im Mac Geek</text>
+        <parent-flex>
+          <button data-close="dialog" class="blue">Ok</button
+          ><button data-close="dialog" class="red">Problem</button
+          ><button data-close>Close</button>
+        </parent-flex>
+      </dialog>
+      <progress-bar><value data-percent="5"></value></progress-bar>
+      <progress-bar class="red"><value data-percent="74"></value></progress-bar>
+      <progress-bar class="yellow"
+        ><value data-percent="20"></value
+      ></progress-bar>
+      <progress-bar class="green"
+        ><value data-percent="45"></value
+      ></progress-bar>
+    </pad>
+    <script src="./script.js"></script>
+  </body>
+</html>

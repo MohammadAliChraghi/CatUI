@@ -16,3 +16,11 @@ chip,
     outline: none;
   }
 }
+[theme="dark"] chip,[theme="dark"] .chip {
+  background-color: @dark-let;
+  color: @dark-gray;
+  &.outlined {
+    background-color: transparent;
+    border: 1px solid @dark-let;
+  }
+}

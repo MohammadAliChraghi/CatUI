@@ -1,5 +1,3 @@
-@import "../_variables.less";
-@import "../theme/animations.less";
 dialog,
 .dialog {
   display: flex;
@@ -17,14 +15,14 @@ dialog,
   height: auto;
   width: auto;
   background-color: white;
-  border: 1px solid #f0f0f0;
+  border: none;
   transition-duration: 700ms !important;
   & > h1,
   > h2,
   > h3,
   > h4 {
     padding: 0 5px 5px 5px;
-    border-bottom: 1px solid @gray-pale;
+    border-bottom: 1px solid @dark-gray;
     margin: 0;
     width: 100%;
     text-align: center;
@@ -33,7 +31,7 @@ dialog,
   .text,
   > p {
     text-align: justify;
-    border-bottom: 1px solid @gray-pale;
+    border-bottom: 1px solid @dark-gray;
     width: 100%;
     margin: 10px 0;
     padding-bottom: 10px;
@@ -48,4 +46,10 @@ dialog,
     bottom: 0;
     transition-duration: 700ms;
   }
+}
+
+[theme="dark"] dialog,
+[theme="dark"] .dialog {
+  background-color: @dark-light;
+  color: @gray;
 }

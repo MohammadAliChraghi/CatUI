@@ -1,4 +1,3 @@
-@import "../_variables.less";
 input {
   outline: none;
 }
@@ -167,4 +166,11 @@ input[type="range"]::-webkit-slider-thumb,input[type="range"]::-moz-range-thumb 
   height: 18px;
   width: 18px;
   border-radius: 50px;
+}
+
+
+[theme="dark"] input,
+[theme="dark"] select {
+  background-color: @dark-light;
+  color: @gray;
 }
