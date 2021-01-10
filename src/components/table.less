@@ -1,0 +1,21 @@
+@import "../_variables.less";
+table {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  border-spacing: 0;
+  border-collapse: collapse;
+  & thead {
+    & tr {
+      background-color: @blue;
+      color: white;
+    }
+  }
+  & th,
+  td {
+    padding: 5px 10px;
+    font-weight: 400;
+    border: 1px solid @gray;
+    text-align: center;
+  }
+}
