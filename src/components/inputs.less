@@ -1,4 +1,21 @@
 @import "../_variables.less";
+input {
+  outline: none;
+}
+select {
+  border: 1px solid @gray-pale;
+  border-radius: 4px;
+  width: 150px;
+  padding: 5px;
+  font-size: 14pt;
+  cursor: pointer;
+  background-color: @gray;
+  outline: none;
+  &:focus-visible {
+    box-shadow: 0 0 0 2px rgba(39, 94, 254, 0.3);
+  }
+}
+
 input[type="text"] {
   background: #fff;
   border: 1px solid @gray-pale;
@@ -7,7 +24,7 @@ input[type="text"] {
   cursor: pointer;
   padding: 5px 12px;
   font-size: 12pt;
-  &:focus{
+  &:focus {
     cursor: auto;
   }
 }
@@ -16,6 +33,7 @@ input[type="text"] {
   input[type="radio"] {
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     height: 21px;
     outline: none;
     display: inline-block;
@@ -131,4 +149,24 @@ input[type="text"] {
       --s: 0.5;
     }
   }
+}
+
+input[type="range"] {
+  background: @gray;
+  border-radius: 8px;
+  height: 7px;
+  width: 356px;
+  outline: none;
+  transition: background 450ms ease-in;
+  appearance: none;
+  cursor: w-resize;
+}
+
+input[type="range"]::-webkit-slider-thumb,input[type="range"]::-moz-range-thumb {
+  background-color: @blue-border;
+  appearance: none;
+  border: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 50px;
 }

@@ -30,6 +30,7 @@ $(document).ready(function () {
   });
 });
 
+
 var t = document.createElement("TOOLTIP");
 const d = document.querySelectorAll("[data-tooltip]");
 document.body.prepend(t);

@@ -1,0 +1,18 @@
+chip,
+.chip {
+  background-color: @gray;
+  border-radius: 4px;
+  padding: 5px 10px;
+  outline: none;
+  &.outlined {
+    background-color: transparent;
+    border: 1px solid @gray-pale;
+  }
+  &:focus-visible {
+    box-shadow: 0 0 0 2px lighten(@dark, 80%);
+  }
+  &:focus{
+    box-shadow: none;
+    outline: none;
+  }
+}
