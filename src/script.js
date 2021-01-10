@@ -2,6 +2,8 @@ const Errors = {
   Code_1: "CatUI Error Code 1 : Target Element Not Found!",
   Code_2:
     "CatUI Error Code 2 : Some value is not given to the ( <value> or <div class='value'> ) element !",
+  Code_3:
+    "CatUI Error Code 3 : Collapsable Element First Child Can Only Be <ul>",
 };
 
 function GetLocation(e) {
@@ -19,22 +21,20 @@ function GetLocation(e) {
   };
 }
 
-$(document).ready(function () {
-  $(".progress-bar > value, progress-bar > value").each(function () {
-    var p = $(this).data("percent");
+document
+  .querySelectorAll(".progress-bar > value, progress-bar > value")
+  .forEach((i) => {
+    var p = i.getAttribute("data-percent");
     if (typeof p !== undefined && typeof p !== "undefined") {
-      $(this).css("width", `${p}%`);
+      i.style.width = `${p}%`;
     } else {
       console.warn(Errors.Code_2);
     }
   });
-});
-
 
 var t = document.createElement("TOOLTIP");
-const d = document.querySelectorAll("[data-tooltip]");
 document.body.prepend(t);
-d.forEach((i) => {
+document.querySelectorAll("[data-tooltip]").forEach((i) => {
   const handleMouseLeave = () => t.classList.remove("open");
   const handleMouseMove = (e) => {
     t.innerText = i.getAttribute("data-tooltip");
@@ -46,64 +46,82 @@ d.forEach((i) => {
   i.addEventListener("mouseleave", handleMouseLeave);
 });
 
-$("[data-open]").on("click", function () {
-  var e = $(this).data("open");
-  if (e.length) {
-    if ($(`#${e}`).length) {
-      $(`#${e}`).addClass("open");
+document.querySelectorAll("[data-open]").forEach((i) => {
+  i.addEventListener("click", () => {
+    var e = i.getAttribute("data-open");
+    if (e.length) {
+      var ec = document.querySelector(`#${e}`);
+      var ec = document.querySelector(`#${e}`);
+      if (ec) {
+        ec.classList.add("open");
+      } else {
+        console.error(Errors.Code_1);
+      }
     } else {
-      console.error(Errors.Code_1);
+      i.parentNode.classList.add("open");
     }
-  } else {
-    $(this).parent().addClass("open");
-  }
+  });
 });
 
-$("[data-close]").on("click", function () {
-  var e = $(this).data("close");
-  if (e.length) {
-    if ($(`#${e}`).length) {
-      $(`#${e}`).removeClass("open");
+document.querySelectorAll("[data-close]").forEach((i) => {
+  i.addEventListener("click", () => {
+    var e = i.getAttribute("data-close");
+    if (e.length) {
+      var ec = document.querySelector(`#${e}`);
+      if (ec) {
+        ec.classList.remove("open");
+      } else {
+        console.error(Errors.Code_1);
+      }
     } else {
-      console.error(Errors.Code_1);
+      i.parentNode.classList.remove("open");
+      console.log("Hi");
     }
-  } else {
-    $(this).parent().removeClass("open");
-  }
+  });
 });
 
-$("list-item > li.clp, .list-item > li.clp").on("click", function () {
-  if (!$(this).children().hasClass("open")) {
-    $(this).children().addClass("open");
-  } else {
-    $(this).children().removeClass("open");
-  }
-});
+document
+  .querySelectorAll("list-item > li.clp, .list-item > li.clp")
+  .forEach((i) => {
+    i.addEventListener("click", () => {
+      if (i.children[0].nodeName === "UL") {
+        var e = i.children[0];
+        if (!e.classList.contains("open")) {
+          e.classList.add("open");
+        } else {
+          e.classList.remove("open");
+        }
+      } else {
+        console.error(Errors.Code_3);
+      }
+    });
+  });
 
-$(window).on("click", function () {
-  $(".sidenav, sidenav").each(function () {
-    var str = $(this).css("transform");
+window.addEventListener("click", () => {
+  document.querySelectorAll(".sidenav, sidenav").forEach((i) => {
+    var str = window.getComputedStyle(i).getPropertyValue("transform");
     var x = str.split(",");
     var len = x.length;
     if (parseInt(x[len - 2]) >= 0) {
-      $(this).removeClass("open");
+      i.classList.remove("open");
     }
   });
 
-  $(".nav, nav").each(function () {
+  document.querySelectorAll(".nav, nav").forEach((i) => {
     if (window.matchMedia("(max-width: 900px)").matches) {
-      var str = $(this).css("transform");
+      var str = window.getComputedStyle(i).getPropertyValue("transform");
       var x = str.split(",");
       var len = x.length;
       if (parseInt(x[len - 2]) >= 0) {
-        $(this).removeClass("open");
+        i.classList.remove("open");
       }
     }
   });
 });
-
-$(".sidenav, sidenav, .nav, nav").on("click", function (event) {
-  event.stopPropagation();
+document.querySelectorAll(".sidenav, sidenav").forEach((i) => {
+  i.addEventListener("click", (ev) => {
+    ev.stopPropagation();
+  })
 });
 
 window.MutationObserver =
@@ -126,9 +144,3 @@ var target = document.querySelectorAll(
 for (i of target) {
   observer.observe(i, config);
 }
-
-var i = 5;
-setInterval(function () {
-  $("progress-bar > value").attr("data-percent", i);
-  i = i + 5;
-}, 1000);
