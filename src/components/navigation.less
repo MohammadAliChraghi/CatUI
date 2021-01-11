@@ -2,13 +2,14 @@ nav,
 .nav {
   display: flex;
   padding: 0;
-  width: 100vw;
+  width: 100%;
   height: auto;
+  overflow: hidden;
   margin: 0 auto;
-  z-index: 1;
+  z-index: 5;
   top: 0;
   left: 0;
-  position: fixed;
+  position: sticky;
   flex-wrap: wrap;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -36,6 +37,7 @@ nav,
   border-color: @dark-light;
   & > li {
     border-color: @dark;
+    color: @gray;
     & > a {
       color: @gray;
     }
@@ -52,13 +54,15 @@ ul {
 @media screen and (max-width: @sm_screen) {
   .nav,
   nav {
-    height: 100vh;
+    height: 100%;
     width: 240px;
+    position: fixed;
+    margin: 0;
     top: 0;
     left: 0;
     transform: translateX(-240px);
     background-color: #fff;
-    border-right: 1px solid @gray;
+    border-right: 1px solid #e8e8e8;
     display: block;
     overflow-x: hidden;
     overflow: auto;

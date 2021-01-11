@@ -1,0 +1,31 @@
+#main-logo {
+  display: flex;
+  align-items: center;
+  font-size: 64pt;
+  font-weight: 900;
+  user-select: none;
+  justify-content: center;
+  font-family: FiraCode;
+  color: #5d87be;
+  margin-bottom: 50px;
+}
+#main-logo img {
+  width: 200px;
+  margin-right: 40px;
+}
+#Startbuttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+#Startbuttons button {
+  margin: 10px;
+}
+.inc_tag xmp {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+#features h2 {
+  color: #536C8A;
+}

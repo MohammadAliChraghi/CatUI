@@ -118,10 +118,10 @@ window.addEventListener("click", () => {
     }
   });
 });
-document.querySelectorAll(".sidenav, sidenav").forEach((i) => {
+document.querySelectorAll(".sidenav, sidenav, .nav, nav").forEach((i) => {
   i.addEventListener("click", (ev) => {
     ev.stopPropagation();
-  })
+  });
 });
 
 window.MutationObserver =

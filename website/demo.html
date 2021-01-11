@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CatUI - Demo</title>
+    <link rel="icon" href="Logo.png" />
+    <link rel="stylesheet" href="cat-ui.min.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <li>
+        <input type="text" placeholder="type..." />
+      </li>
+      <li><a href="https://vlang.io">Vlang</a></li>
+      <li>
+        <a href="https://github.com/MohammadAliChraghi/CatUI"
+          >MohammadAliChraghi</a
+        >
+      </li>
+      <li>
+        <a href="https://github.com/MohammadAliChraghi/CatUI/wiki">Wiki</a>
+      </li>
+      <li>
+        <a href="https://github.com/MohammadAliChraghi/CatUI/releases"
+          >Releases</a
+        >
+      </li>
+      <li>
+        Dark Mode<input id="darkmode" type="checkbox" class="switch ms-2" />
+      </li>
+    </nav>
+    <pad>
+      <h2>Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Head</th>
+            <th>Head</th>
+            <th>Head</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Body</td>
+            <td>Body</td>
+            <td>Body</td>
+          </tr>
+          <tr>
+            <td>Body</td>
+            <td>Body</td>
+            <td>Body</td>
+          </tr>
+          <tr>
+            <td>Body</td>
+            <td>Body</td>
+            <td>Body</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Grid</h2>
+      <div
+        class="row"
+        style="margin: 20px 10px; border: 1px solid #999999; text-align: center"
+      >
+        <div style="border: 1px solid #999999" class="col-lg-4">Grid</div>
+        <div style="border: 1px solid #999999" class="col-lg-4">System</div>
+        <div style="border: 1px solid #999999" class="col-lg-4">Columns</div>
+      </div>
+      <h2>Form Components</h2>
+      <input class="mb-3" type="text" placeholder="Username" />
+      <br />
+      SelectBox:
+      <select class="mb-3">
+        <option>Admin</option>
+        <option>Developer</option>
+        <option>User</option>
+      </select>
+      <br />
+      Checkbox: <input class="mb-3" type="checkbox" />
+      <br />
+      Radio: <input class="mb-3" type="radio" />
+      <br />
+      Switch: <input class="mb-3 switch" type="checkbox" />
+      <br />
+      Range: <input class="mb-3" type="range" />
+      <br />
+      <button data-open="navbar" data-tooltip="Only Work For Mobile Size">
+        Open Navbar
+      </button>
+      <button data-open="dialog" class="blue">Open Dialog</button>
+      <button data-open="sidenav" class="green">Open Sidenav</button>
+      <button class="yellow">Yellow</button>
+      <button class="red">Red</button>
+      <h2>Chip</h2>
+      <chip class="outlined" tabindex="0">Chip</chip>
+      <chip tabindex="0">Chip</chip>
+      <h2>Proggressbar</h2>
+      <progress-bar><value data-percent="80"></value></progress-bar>
+      <progress-bar class="red"><value data-percent="70"></value></progress-bar>
+      <progress-bar class="green"
+        ><value data-percent="60"></value
+      ></progress-bar>
+      <progress-bar class="yellow"
+        ><value data-percent="50"></value
+      ></progress-bar>
+      <h2>Code</h2>
+      <pre>
+fn main() {
+    areas := ['game', 'web', 'tools', 'science', 'systems',
+              'embedded', 'drivers', 'GUI', 'mobile']
+    for area in areas {
+      println('Hello, $area developers!')
+    }
+}</pre
+      >
+    </pad>
+    <sidenav id="sidenav">
+      <li>First Item</li>
+      <li>Item</li>
+      <li>Item</li>
+      <li>Last Item</li>
+    </sidenav>
+    <dialog id="dialog">
+      <h4>Dialog Title</h4>
+      <text>Dialog Text</text>
+      <button data-close>Close</button>
+    </dialog>
+    <script src="./cat-ui.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
