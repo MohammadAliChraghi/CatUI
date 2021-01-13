@@ -10,8 +10,9 @@ button,
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  border: 1px solid @gray-pale;
+  border: none;
   border-radius: 4px;
+  transition: 200ms;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -24,6 +25,7 @@ button,
   }
   &:hover {
     background-color: darken(@gray, 3%);
+    transition: 200ms;
   }
   &:active {
     background-color: darken(@gray, 5%);
